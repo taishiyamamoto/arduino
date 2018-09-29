@@ -16,6 +16,7 @@ void setup() {
 }
 
 void loop() {
+  int cnt=0;
   // LED1からLED8までを順に光らせます
   for(int i=0;i<1;i++){
     temp=data[0];
@@ -28,10 +29,8 @@ void loop() {
      shiftOut(dataPin, clockPin, LSBFIRST,(data[0]<<j) );
      shiftOut(dataPin, clockPin, LSBFIRST,(data[1]<<j) );
      // 送信終了後latchPinをHIGHにする
-     digitalWrite(latchPin, HIGH);
-    
-     delay(100);
-    
+    digitalWrite(latchPin, HIGH);
+    delay(100);
    }
   }
 }
